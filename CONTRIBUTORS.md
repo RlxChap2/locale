@@ -1,5 +1,5 @@
 # Contributors 
 
 1. [Egyptian dialect](dialect/eg.js)
-- Credit: [dzan](https://github.com/users/d-zan) 
+- Credit: [dzan](https://github.com/user/d-zan) 
 - Status: `Working on it`

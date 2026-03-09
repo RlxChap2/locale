@@ -18,31 +18,22 @@ module.exports = {
         invalidDuration: `**${warning} يرجاء كتابة صيغة مدة التيم اوت بشكل صحيح، مثل: \`1m/1d/1h\` **`,
         durationExceed: `**${warning} مدة التيم اوت لايمكن ان تزيد عن 28 يوم!**`, 
         success: {
-            //`**${correct} تم وضع مهلة للمستخدم {{user}} لمدة {{duration}} بنجاح. ${reason} السبب: {{reason}}**`,    
             set: `**${correct} تم اضافة تيم اوت للمستخدم {{user}} لمدة {{duration}},\n ${reason} السبب: {{reason}}.**`,
-            // `**${correct} تمت إزالة المهلة عن المستخدم {{user}} بنجاح. ${reason} السبب: {{reason}}**`
             remove:`**${correct} تم ازالة التيم اوت بنجاح من المستخدم {{user}} \n ${reason} السبب: {{reason}}**`,
         },
-//`**${incorrect} فشل في إعطاء مهلة للمستخدم. هل لدي الصلاحيات الصحيحة؟ تأكد أن رتبتي أعلى من رتبة المستخدم.\n-# إذا استمرت المشكلة، يرجى التواصل مع الدعم.**`
         failure: failure("مقدرش ادي المستخدم تيم اوت"),
-        
         cannotSelf: `**${warning} مينفعش تدي نفسك تيم اوت.**`,
         cannotBot: `**${warning} مينفعش تديني تيم اوت :).**`,
-        //لا يمكنك إعطاء مهلة لعضو رتبته مساوية أو أعلى من رتبتك.
         cannotHigher: `**${warning} متقدرش تدي المستخدم ده تيم اوت, ممكن المستخدم ده رتبته اعلي من رتبتك او معاه نفس رتبتك.**`,
-       // لا أستطيع إعطاء مهلة لهذا المستخدم. ربما رتبته أعلى مني أو لديه صلاحيات المدير.
         cannotModerate: `**${warning} مقدرش ادي المستخدم ده تيم اوت. رتبته اعلي من رتبتي او معاها ادمن.**`,
-        //
         invalidAction: `**${incorrect} إجراء غير صالح. استخدم 'set' أو 'remove'.**`,
     },
     ban: {
         userNotFound: user_not_found,
         success: {
             give: `**${correct} المستخدم {{user}} خد بان بنجاح \n${reason} السبب: {{reason}}.**`,
-//${emojis.emojis.correct} تم إلغاء حظر {{user}} بنجاح. ${emojis.emojis.reason} السبب: {{reason}}
             remove: `**${correct} تم فك البان من المستخدم {{user}} بنجاح, \n ${reason} السبب: {{reason}}.**`,
         },
-        //فشل في حظر/إلغاء حظر المستخدم. هل لدي الصلاحيات الصحيحة؟ تأكد أن رتبتي أعلى من رتبة المستخدم.\n-# إذا استمرت المشكلة، يرجى التواصل مع الدعم.
         failure:failure("فشل اعطاء/فك البان من المستخدم"),
         cannotSelf: `**${warning} مش ينفع تدي نفسك بان...**`,
         cannotBot: `**${warning} جاري الحظر. لحظة ده انا! ليه بس كده :( تواصل مع الدعم للمساعده.**`,
@@ -53,7 +44,6 @@ module.exports = {
     },
     kick: {
         userNotFound: user_not_found,
-        //تم طرد {{user}} بنجاح. ${emojis.emojis.reason} السبب: {{reason}}
         kicked: `**${correct} تم طرد المستخدم {{user}} بنجاح. \n${reason} السبب: {{reason}}**`,
         error: failure("مقدرش اطرد العضو ده"),
         cannotSelf: `**${warning} مينفعش تطرد نفسك.**`,
@@ -66,7 +56,7 @@ module.exports = {
         userNotFound: `**${incorrect} مش لاقي الـID في ليستت البان.**`,
         userNotBanned: `**${warning} المستخدم مش واخد بان.**`,
         unbanned: `**${correct} تم فك البان من المستخدم {{user}} بنجاح. \n${reason} السبب: {{reason}}**`,
-        error: `**${incorrect} فشل في إلغاء حظر المستخدم. الخطأ: {{error}}**` //! Why the user will care about the err?
+        error: `**${incorrect} فشل في إلغاء حظر المستخدم. الخطأ: {{error}}**` 
     },
     lock: {
         channelNotFound: `**${incorrect} مش لاقي الروم دي.**`,
@@ -182,12 +172,6 @@ module.exports = {
                 `تش-تشينج, تم استلام مبلغ {{amount}} بنجاح. بواسطة: {{sender}}`,
                 `تم تحويل مبلغ وقدره {{amount}} من {{sender}}.`,
                 `ارسل {{sender}} تحويل مالي بمبلغ {{amount}}.`
-                /*
-                `لقد استلمت تحويلًا واردًا بقيمة {{amount}} عملة فلفرا من {{sender}}`,
-                `تشا-تشينغ! استلمت للتو {{amount}} عملة فلفرا من {{sender}}!`,
-                `أخبار سارة! أرسل لك {{sender}} مبلغ {{amount}} عملة فلفرا.`,
-                `تنبيه تحويل! قام {{sender}} بتحويل {{amount}} عملة فلفرا إليك.`
-                */
             ],
             dmTransferType: `نوع التحويل: بدون`,
             dmReason: `السبب`,
@@ -219,11 +203,10 @@ module.exports = {
         verificationPrompt: `اكتب الأحرف في الصورة للمتابعة مع أمر **{{action}}**.`,
         verificationFailed: `فشل التحقق.`,
         verificationTimeout: `وقت التحقق خلص.`,
-        captchaFailed: `فشل في إنشاء رمز التحقق الأمني. حاول مرة أخرى.`,
-        error: `حدث خطأ أثناء تنفيذ أمر الجيفاوي.`,
+        captchaFailed: `مقدرتش اعمل رمز التحقق. جرب تاني.`,
+        error: `في حاجه غلط حصلت.`,
         start: {
-            //`صيغة المدة غير صحيحة. استخدم: 1d، 2h، 15m، 30s`
-            invalidDuration:`صيغة المده غلط. استخدم: 30m او 1h او 40s.` ,
+            invalidDuration:`صيغة المده غلط. \n الاستخدام: \`30m , 1h , 40s\`` ,
             embedTitle: `🎉 {{prize}}`,
             enterPrompt: `اضغط على زر 🎉 التحت للمشاركة!`,
             winners: `الكسبانين`,
@@ -246,15 +229,12 @@ module.exports = {
             notFound: `لم يتم العثور على الجيفاوي.`,
             notFinished: `يجب أن ينتهي الجيفاوي لإعادة الاختيار.`,
             announcement: `🔄 **إعادة اختيار!** الفائز(ون) الجدد لـ **{{prize}}**: {{winners}}`,
-            //`لا يوجد مشاركون صالحون للاختيار منهم.`
             noEntrants: `مفيش مشاركين كويسين اختار منهم.`,
             success: `تم إعادة الاختيار للجيفاوي.`,
         },
         remove: {
             notFound: `مش لاقي الجيفاوي..`,
-            //تم حذف هدية **{{prize}}** من قاعدة البيانات. 
-            //تعليق: المستخدم ليس له علاقه ب قاعدة البيانات.... لذا لا حاجة لذكرها.
-            success: `الجيفاوي **{{prize}}** حذف بنجاح.`,
+            success: `تم حذف الجيفاوي بنجاح **{{prize}}**.`,
         },
         list: {
             title:`الجيفاويات ال شغاله`,
@@ -322,9 +302,9 @@ module.exports = {
     warn: {
         guildRequired: `لازم تستخدمه في السيرفرات بس.`,
         userNotFound: user_not_found,
-        cannotHigher: `مينفعش ادي المستخدم تحذير بسبب ترتيب الرتب.`,
-        title: `تم تحذير المستخدم`,
-        user: `المستخدم`,
+        cannotHigher: `مينفعش ادي العضو تحذير بسبب ترتيب الرتب.`,
+        title: `تم تحذير العضو`,
+        user: `العضو`,
         infractionId: `ID المخالفة`,
         activeWarnings: `التحذيرات النشطة`,
         reason: `السبب`,
@@ -336,7 +316,7 @@ module.exports = {
     warnings: {
         guildRequired: `لازم تستخدم الامر ده في سيرفر.`,
         title: `تحذيرات {{user}}`,
-        noWarningsActive: `لا يوجد تحذيرات نشطة للمستخدم.`,
+        noWarningsActive: `لا يوجد تحذيرات نشطة للعضو.`,
         noWarningsAll: `لم يتم العثور على تحذيرات (بما في ذلك غير النشطة).`,
         active: `نشط`,
         inactive: `غير نشط`,
@@ -366,14 +346,14 @@ module.exports = {
         doesNotHaveRole: `مش معاه الرتبة دي اصلا.`,
         giveSuccess: `تم إعطاء الرتبه {{role}} لـ {{user}} بنجاح. \n السبب: {{reason}}`,
         removeSuccess: `تم إزالة الرتبة {{role}} من {{user}} بنجاح.\n السبب: {{reason}}`,
-        giveFail: `فشل في اعطاء الرتبة. شوف صلاحياتي و أتاكد منها, وأتاكد ان رتبتي اعلي من الرتبة ال هديها للمستخدم. \n-# لو المشكلة استمرت كلم الدعم.`,
+        giveFail: `فشل في اعطاء الرتبة. شوف صلاحياتي و أتاكد منها, وأتاكد ان رتبتي اعلي من الرتبة ال هديها للعضو. \n-# لو المشكلة استمرت كلم الدعم.`,
         removeFail: `فشل في ازالة الرتبة. أتاكد من صلاحياتي, اتحقق اذا كانت رتبتي اعلي من الرتبه الـ انا هشيلها. \n-# لو المشكلة استمرت كلم الدعم.`,
         giveBotSuccess: `تم اضافة الرتبه {{role}} لـ {{success}} بوت بنجاح. \n فشل في اضافة الرتبه لـ {{fali}}. السبب: {{reason}}`,
         removeBotSuccess: `الرتبة {{role}} انشالت من {{success}} بوت بنجاح. \n فشل في ازالة {{fail}} السبب: {{reason}}`,
         giveAllSuccess: `اضافة للجميع. تم اضافة الرتبه {{role}} لـ {{success}} عضو بنجاح. \n فشل في {{fail}}, السبب: {{reason}}`,
         removeAllSuccess: `ازالة للجميع: الرتبه {{role}} انشالت من {{success}} بنجاح. \n فشل في {{fail}} السبب: {{reason}}`,        
         mustSpecifyTarget: `لازم تحدد مستخدم. و التطبيق علي البوتات ول الاعضاء.`,
-        noReason: `مفيش سبب.`,
+        noReason: `محطش سبب.`,
     },
 
     slowmode: {
@@ -388,7 +368,7 @@ module.exports = {
         reason: `السبب: {{reason}}`,
         appliedToCategory: `تم التطبيق على الكتجوري: **{{name}}**`,
         channel: `الروم`,
-        noReason: `مفيش سبب.`,
+        noReason: `محطش سبب.`,
     },
 
     nickname: {
@@ -399,7 +379,7 @@ module.exports = {
         cannotModerate: `مقدرش اغير لقب المستخدم ده. ممكن رتبته اعلي من رتبتي.`,
         successReset: `تم إعادة تعيين لقب {{user}} بنجاح.`,
         successSet: `تم تغيير لقب {{user}} إلى **{{nickname}}** بنجاح.`,
-        error: `فشل في تغيير لقب {{user}}: {{error}}`,
+        error: `حاجه غلط حصلت. فشل في تغيير القب {{user}}: {{error}}`,
     },
 
     disconnect: {
@@ -432,10 +412,8 @@ module.exports = {
         emojiSuccessTitle: `تم إضافة الإيموجي`,
         emojiSuccessDesc: `تم إضافة {emoji} باسم **{name}**`,
         emojiFail: `فشل في إضافة الإيموجي: {error}`,
-        //! What is the (tags) and why they add a unicode?
-        //TODO: Return here>>.
-        missingTags: `يجب توفير وسوم إيموجي يونيكود صالحة.`,
-        //! End
+//Sticker
+        missingTags: `لازم تختار ايموجي مرتبط بالستيكر ده.`,
         mustProvideSticker: `حِط رابط او ملف للستيكر.`,
         stickerSuccessTitle: `تم إضافة الاستيكر`,
         stickerSuccessDesc: `تم إضافة الاستيكر **{name}**`,
@@ -458,7 +436,6 @@ module.exports = {
             footer: `مهام فلفرا`,
         }
     },
-
     backup: {
         error: `حدث خطأ غير متوقع أثناء معالجة أمر النسخ الاحتياطي. حاول مرة أخرى لاحقًا.`,
         create: {
@@ -513,7 +490,7 @@ module.exports = {
             failed: `**عملية استرجاع النسخه فشلت**. في حاجه غلط حصلت, معلش جرب تاني او اتواصل مع المسؤول.`,
             //! what the cmdchannel?
             //TODO: Return here>>>
-            commandChannelContext: `سياق القناة`,
+            commandChannelContext: `حالة القناة`,
             commandChannelPreserved: `🛟 تم الاحتفاظ بقناة الأوامر للسماح بالردود على التفاعل.`,
             commandChannelNotPreserved: `لم يتم الاحتفاظ بقناة الأوامر.`
             //!Re

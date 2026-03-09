@@ -15,7 +15,7 @@ We appreciate every contribution that helps improve the project, whether it is c
 - Project management and updates
 
 ### Translators:
-AR, EG: [Shimizu Hiroyuki](https://github.com/mutesuffering), [Yousef Karm](https://github.com/d-zan)
+AR, EG: [Shimizu Hiroyuki](https://github.com/mutesuffering), [Yousef Karm](https://github.com/d-zan), [ReLaX](https://github.com/RlxChap2)
 
 ---
 

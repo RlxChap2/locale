@@ -436,6 +436,17 @@ module.exports = {
             footer: `مهام فلفرا`,
         },
     },
+    ping: {
+        pinging: `جاري الاتصال...`,
+        networkError: `الشبكة فيها حاجه غلط.`,
+        excellent: `جامد`,
+        good: `يعني`,
+        high: `عالي`,
+        severeLag: `لاج شديد`,
+        pong: `🏓 بونج!`,
+        wsPingTitle: `📡 استجابة الويب سوكيت`,
+        msgLatencyTitle: `⏱️ تأخير الرسالة`,
+    },
     backup: {
         error: `حدث خطأ غير متوقع أثناء معالجة أمر النسخ الاحتياطي. حاول مرة أخرى لاحقًا.`,
         create: {
